@@ -1,0 +1,68 @@
+.login-section{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 2em;
+    
+}
+
+.login-section div{
+    margin: 0 0.2em 0 0.2em;
+}
+
+.logo-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.logo-img{
+    width: 10em;
+    cursor: pointer;
+}
+
+.menu-section{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 2em;
+}
+
+.menu-section li{
+    padding: .5em;
+    cursor: pointer;
+}
+
+.search-box{
+    position: absolute;
+    right: 2em;
+    border-bottom: 1px solid black;
+}
+
+.search-area{
+    border: none;
+    outline: none;
+}
+
+.card-section{
+    background-color: white;
+}
+
+.card-section:hover{
+    scale: 1.1;
+}
+
+.card-img{
+    width: 19em;
+}
+
+.login-box{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.interval > *{
+    margin: 1em 0 1em 0;
+}

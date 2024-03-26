@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -5,6 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 
 const Products = () => {
   const [productList, setProductList] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [query, setQuery] = useSearchParams()
   const callProducts = async () => {
     let searchQuery = query.get('q') || ''

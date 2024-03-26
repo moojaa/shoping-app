@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
@@ -24,7 +26,7 @@ const Detail = () => {
     <div>
       <Container>
         <Row>
-          <Col xs={6}><img src={detailList?.img} /></Col>
+          <Col xs={6}><img src={detailList?.img} alt='디테일 사진'/></Col>
           <Col xs={6} className='interval'>
             <h3>{detailList?.title}</h3>
             <h4>￦{detailList?.price}</h4>

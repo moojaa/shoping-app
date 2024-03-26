@@ -9,7 +9,7 @@ const ProductCard = ({item}) => {
   return (
     <div>
       <div className='card-section' onClick={goPage}>
-        <img className='card-img' src={item.img}/>
+        <img className='card-img' src={item.img} alt='제품이미지'/>
         <div>{item.choice? 'Conscious choice' : ''}</div>
         <div>{item.title}</div>
         <div>￦{item.price}</div>

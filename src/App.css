@@ -1,14 +1,4 @@
-.login-section{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    margin: 2em;
-    
-}
 
-.login-section div{
-    margin: 0 0.2em 0 0.2em;
-}
 
 .logo-section{
     display: flex;
@@ -65,4 +55,16 @@
 
 .interval > *{
     margin: 1em 0 1em 0;
+}
+
+.canvas-style{
+    list-style: none;
+}
+
+.canvas-menu-style{
+    cursor: pointer;
+}
+
+.canvas-menu-style:hover{
+    background-color: blanchedalmond;
 }

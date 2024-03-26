@@ -9,7 +9,7 @@ const Detail = () => {
   const [detailList, setDetailList] = useState([])
   const [sizeSelect, setSizeSelect] = useState(null)
   const getDetail = async () => {
-    let url = `https://my-json-server.typicode.com/moojaa/dbstudy/products/${id}`
+    let url = `https://my-json-server.typicode.com/moojaa/shoping-app/products/${id}`
     let response = await fetch(url)
     let data = await response.json()
     setDetailList(data)

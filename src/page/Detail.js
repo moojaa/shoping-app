@@ -26,8 +26,8 @@ const Detail = () => {
     <div>
       <Container>
         <Row>
-          <Col xs={6}><img src={detailList?.img} alt='디테일 사진'/></Col>
-          <Col xs={6} className='interval'>
+          <Col md={6}><img className='img-fluid' src={detailList?.img} alt='디테일 사진'/></Col>
+          <Col md={6} className='interval'>
             <h3>{detailList?.title}</h3>
             <h4>￦{detailList?.price}</h4>
             <h5>{detailList?.choice ? "Conscious choice" : ""}</h5>

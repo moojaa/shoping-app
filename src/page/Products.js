@@ -3,17 +3,23 @@ import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
+import { productAction } from '../redux/actions/productActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Products = () => {
-  const [productList, setProductList] = useState([])
+  const productList = useSelector(state=>state.productList)
+  // const [productList, setProductList] = useState([])
   // eslint-disable-next-line no-unused-vars
   const [query, setQuery] = useSearchParams()
-  const callProducts = async () => {
+  const dispatch = useDispatch()
+
+  const callProducts = () => {
     let searchQuery = query.get('q') || ''
-    let url = `https://my-json-server.typicode.com/moojaa/shoping-app/products?q=${searchQuery}`
-    let response = await fetch(url)
-    let data = await response.json()
-    setProductList(data)
+    dispatch(productAction.callProducts(searchQuery))
+    // let url = `https://my-json-server.typicode.com/moojaa/shoping-app/products?q=${searchQuery}`
+    // let response = await fetch(url)
+    // let data = await response.json()
+    // setProductList(data)
   }
   useEffect(() => {
     callProducts()

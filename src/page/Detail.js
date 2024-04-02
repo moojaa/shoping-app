@@ -5,17 +5,17 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
-import { detailAction } from '../redux/actions/detailActions';
+import { productAction } from '../redux/actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Detail = () => {
   let { id } = useParams()
-  const detailList = useSelector(state=>state.detail.detailList)
+  const detailList = useSelector(state=>state.product.detailList)
   const [sizeSelect, setSizeSelect] = useState(null)
   const dispatch= useDispatch()
 
   const getDetail = () => {
-    dispatch(detailAction.getDetail(id))
+    dispatch(productAction.getDetail(id))
     // let url = `https://my-json-server.typicode.com/moojaa/shoping-app/products/${id}`
     // let response = await fetch(url)
     // let data = await response.json()

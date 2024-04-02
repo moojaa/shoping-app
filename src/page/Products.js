@@ -3,8 +3,8 @@ import React, { useEffect} from 'react'
 import ProductCard from '../component/ProductCard'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
-import { productAction } from '../redux/actions/productActions'
 import { useDispatch, useSelector } from 'react-redux'
+import { fetchProducts } from '../redux/reducers/productSlice'
 
 const Products = () => {
   const productList = useSelector(state=>state.product.productList)
@@ -15,7 +15,7 @@ const Products = () => {
 
   const callProducts = () => {
     let searchQuery = query.get('q') || ''
-    dispatch(productAction.callProducts(searchQuery))
+    dispatch(fetchProducts(searchQuery))
     // let url = `https://my-json-server.typicode.com/moojaa/shoping-app/products?q=${searchQuery}`
     // let response = await fetch(url)
     // let data = await response.json()

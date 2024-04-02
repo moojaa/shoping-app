@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import ProductCard from '../component/ProductCard'
 import { Container, Row, Col } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
@@ -7,7 +7,7 @@ import { productAction } from '../redux/actions/productActions'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Products = () => {
-  const productList = useSelector(state=>state.productList)
+  const productList = useSelector(state=>state.product.productList)
   // const [productList, setProductList] = useState([])
   // eslint-disable-next-line no-unused-vars
   const [query, setQuery] = useSearchParams()
@@ -21,8 +21,10 @@ const Products = () => {
     // let data = await response.json()
     // setProductList(data)
   }
+  
   useEffect(() => {
     callProducts()
+     // eslint-disable-next-line
   }, [query])
   return (
     <div>

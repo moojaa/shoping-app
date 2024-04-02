@@ -1,14 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faSearch,faBars } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { authenticateAction } from '../redux/actions/authenticateActions'
 
-const NavbarArea = ({ authenticate, setAuthenticate }) => {
+const NavbarArea = () => {
   const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M HOME', 'Sale', '지속가능성']
   const navigate = useNavigate()
   const goPage = (page) => {
@@ -23,17 +25,18 @@ const NavbarArea = ({ authenticate, setAuthenticate }) => {
     if (event.key === "Enter") {
       let keyword = event.target.value
       navigate(`/?q=${keyword}`)
-      console.log(keyword)
     }
 
   }
+  const dispatch = useDispatch()
+  const authenticate = useSelector(state => state.auth.authenticate)
 
   return (
     <div>
       <Navbar key="lg" expand="lg">
         <div className='d-flex w-100 justify-content-between justify-content-lg-end p-3'>
           <Button variant="outline-" className="d-lg-none" onClick={handleShow}><FontAwesomeIcon icon={faBars} /></Button>
-          <div className='login-box' onClick={authenticate ? () => setAuthenticate(false) : () => goPage('login')}>
+          <div className='login-box' onClick={authenticate ? () => dispatch(authenticateAction.logout()) : () => goPage('login')}>
             <FontAwesomeIcon className='me-1' icon={faUser} />
             <div>{authenticate ? "로그아웃" : "로그인"}</div>
           </div>

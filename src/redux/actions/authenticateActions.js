@@ -4,4 +4,10 @@ function login(id,password) {
     }
 }
 
-export const authenticateAction = { login }
+function logout(){
+    return(dispatch,getState)=>{
+        dispatch({type:"LOG_OUT",payload:false})
+    }
+}
+
+export const authenticateAction = { login,logout }

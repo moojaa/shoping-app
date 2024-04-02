@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { authenticateAction } from '../redux/actions/authenticateActions';
 import { useState } from 'react';
 
-const Login = ({setAuthenticate}) => {
+const Login = () => {
   const [id,setId]=useState('')
   const [password,setPassword]=useState('')
   const dispatch= useDispatch()
